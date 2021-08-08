@@ -12,5 +12,5 @@ Free
 2. staging area - git add를 한 파일들이 존재하는 영역, 커밋을 하게되면 이 영역에 있는 파일들만 커밋에 반영됨
 3. repository - working directory의 변경 이력들이 저장되어 있는 영역, 커밋들이 저장되는 영역
 
-즉, working directory에서 작업을 하여 작업한 파일들을 git add하여 staging area에 담고 그 담겨있는 것들을 커밋하면 repository에 저장된다.
+즉, working directory에서 작업을 하여 작업한 파일들을 git add하여 staging area에 담고, 그 담겨있는 것들을 커밋하면 repository에 저장된다.
 
