@@ -1,1 +1,69 @@
+# 기본 라이센스
 Free
+
+커밋 주의사항
+1. 처음으로 커밋을 하기 전 사용자의 이름과 이베일 주소를 설정
+2. 커밋 메세지 남기기 옵션 -m
+3. 커밋할 파일을 git add로 지정해주기
+
+
+작업 영역의 이름
+1. working directory - 작업을 하는 프로젝트 디렉토리를 말함 ex) MathTool을 말함
+2. staging area - git add를 한 파일들이 존재하는 영역, 커밋을 하게되면 이 영역에 있는 파일들만 커밋에 반영됨
+3. repository - working directory의 변경 이력들이 저장되어 있는 영역, 커밋들이 저장되는 영역
+
+즉, working directory에서 작업을 하여 작업한 파일들을 git add하여 staging area에 담고, 그 담겨있는 것들을 커밋하면 repository에 저장된다.
+
+
+git의 상태
+Untracked 상태
+- '추적되지 않고 있는'이라는 뜻, 이 상태는 파일이 git에 의해서 그 변동사항이 전혀 추적되고 있지 않는 상태를 뜻함, ex) 파일을 새로 생성하고 그 파일을 한번도 git add해주지 않았다면 이 상태
+
+Tracked 상태
+- 파일이 git에 의해 그 변동사항이 추적되고 있는 상태 이 상태는 다시 그 특성에 따라 3가지 상태로 나뉨
+1. Staged상태 
+	- 파일의 내용이 수정되고나서, staging area에 올라와있는 상태를 Staged 상태라고 함
+   새로 생성한 파일에 내용을 쓰고 git add를 해주거나, 한 번이라도 커미셍 포함됐었던 파일이라도 내용을 수정하고 git add를 해주면 이 상태
+
+2. Unmodified(수정되지 않은, 변한게 없는) 상태 
+	- 현재 파일의 내용이 최신 커밋의 모습과 비교했을 때 전혀 바뀐게 없는 상태면 Unmodified 상태, 커밋을 하고 난 직후에는 working directory 안의 모든 파일들이 이 상태가 됨
+
+3. Modified(수정된) 상태
+	- 최신 커밋의 모습과 비교했을 때 조금이라도 바뀐 내용이 있는 상태면 그 파일은 Modified 상태
+
+
+로컬 레포지토리(내 컴퓨터) -> 리모트 레포지토리(github)  git push
+리모트 레포지토리 -> 로컬 레포지토리  git pull
+
+
+git clone - github에 있는 프로젝트를 내 컴퓨터로 가져오기
+
+git push -u origin master - 로컬 레포지토리의 내용을 처음으로 리모트 레포지토리에 올릴 때 사용
+
+
+커밋 히스토리 - 가장 아래에 있는게 가장 오래된 커밋내용 위로갈수록 최근
+git log 
+더 깔끔하게 보고 싶으면 
+git log --pretty=oneline
+
+특정 커밋만 보고 싶다면
+git show 커밋고유번호 앞에 4자리정도만 입력
+
+
+-m을 사용하지 않고 작성하는 방법
+1. git commit만 입력하면 유닉스 화면으로 넘어감 i를 누른 뒤 메세지 입력
+2. 메세지 내용 입력 후 엔터로 줄 바꿔 상세내용을 입력하고 싶으면 입력(메세지 제목과 내용 사이에 빈공간 한줄을 만들어 놔야함)
+3. 다 적었다면 esc누른 후 :wq입력 후 엔터
+
+
+최신 커밋 내용을 수정하고 싶다면
+git commit --amend 를 입력하여 유닉스 화면 (vim)에서 수정
+
+
+git reset - 과거 커밋으로 아예 돌아가고 싶을 때(재설정의 의미)
+git reset --hard '이동하고자하는 커밋번호'
+--hard - working directory, staging area, HEAD 모두를 과거의 특정 커밋으로 바꾸고 싶을 때
+--mixes - staging area, HEAD가 과거의 특정 커밋으로 바꾸고 싶을 때
+--soft - HEAD만 과거의 특정 커밋으로 바꾸고 싶을 때
+
+
