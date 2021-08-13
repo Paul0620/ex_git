@@ -73,4 +73,6 @@ ex) git tag Version_1 커밋명 4자리
 git show 태그명 - 태그와 연결된 커밋을 보고 싶을 때 사용
 
 
-
+git branch 브랜치명 - 브랜치 생성
+git branch -d 브랜치명 - 브랜치 삭제
+git checkout -b 브랜치명 - 브랜치를 생성하면서 해당 브랜치로 이동
