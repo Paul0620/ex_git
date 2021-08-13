@@ -61,9 +61,16 @@ git commit --amend 를 입력하여 유닉스 화면 (vim)에서 수정
 
 
 git reset - 과거 커밋으로 아예 돌아가고 싶을 때(재설정의 의미)
-git reset --hard '이동하고자하는 커밋번호'
+git reset --hard '이동하고자하는 커밋번호' 
+or HEAD^ (HEAD가 가르키는 커밋 바로 전) or HEAD~n (HEAD가 가르키는 커밋 n단계 전) n = 숫자 넣기
 --hard - working directory, staging area, HEAD 모두를 과거의 특정 커밋으로 바꾸고 싶을 때
 --mixes - staging area, HEAD가 과거의 특정 커밋으로 바꾸고 싶을 때
 --soft - HEAD만 과거의 특정 커밋으로 바꾸고 싶을 때
+
+
+git tag - 프로젝트시 주요 버전의 시작점에 태그로 표시해주기 위해 사용
+ex) git tag Version_1 커밋명 4자리
+git show 태그명 - 태그와 연결된 커밋을 보고 싶을 때 사용
+
 
 
